@@ -32,13 +32,6 @@ function sendMessage($method, $parameters) {
     file_get_contents(API_URL.$method, false, $context);
 }
 
-/*
-$update_response = file_get_contents(API_URL."getupdates");
-$response = json_decode($update_response, true);
-$length = count($response["result"]);
-$update = $response["result"][$length-1];
-*/
-
 $update_response = file_get_contents("php://input");
 $update = json_decode($update_response, true);
 
