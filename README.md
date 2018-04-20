@@ -1,6 +1,2 @@
 # CardapioUFSCarBot
-A telegram bot that show the daily UFSCar's menu
-
-## To do
-
-- [ ] Improve getResult method; 
+A telegram bot that shows UFSCar daily menu.
