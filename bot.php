@@ -1,5 +1,4 @@
 <?php
-
 require('parser.php');
 
 define('BOT_TOKEN', 'YOUR TOKEN');
@@ -16,7 +15,7 @@ function processMessage($message) {
         if (strpos($text, "/start") === 0) {
             sendMessage("sendMessage", array('chat_id' => $chat_id, 'text' => 'Olá, eu sou um bot que informa o cardápio do dia no Restaurante Universitário da UFSCar, para ver o cardápio me envie o comando /getmenu ou /cardapio'));
         } else if ((strpos($text, "/getmenu") === 0) || (strpos($text, "/cardapio") === 0)) {
-            sendMessage("sendMessage", array('chat_id' => $chat_id, 'text' => getResult()));
+            sendMessage("sendMessage", array('chat_id' => $chat_id, 'text' => getResult(), 'parse_mode' => 'Markdown'));
         } else {
             sendMessage("sendMessage", array('chat_id' => $chat_id, 'text' => 'Desculpe, mas não entendi sua mensagem.'));
         }
